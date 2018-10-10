@@ -1,0 +1,23 @@
+<ul>
+  {{#each model as |post|}}
+    <li>
+      {{#link-to "post" post.id}}
+        {{post.title}}
+      {{/link-to}}
+
+      <button type="button" onclick={{action "deletePost" post}}>
+        <!-- pass in post variable as parameter connect to controllers/index.js -->
+        Delete
+      </button>
+
+    {{#link-to "edit" post.id}}
+        Edit
+      {{/link-to}}
+
+
+    </li>
+    <br>
+  {{/each}}
+</ul>
+
+{{outlet}}
